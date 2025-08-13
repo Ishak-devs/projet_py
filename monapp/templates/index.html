@@ -5,20 +5,32 @@
     <title>Home</title>
 </head>
 <style>
+    body {
+    font-family: arial;
+    }
      .formulaire_event {
             width: 300px;
             height: 300px;
             display: flex;
-            justify-content: center;
-            align-items: center;
+                  justify-content: center;
+              align-items: center;
+                height: 100vh;
+                margin: 0;
         }
+    input {
+    border-radius : 20px;
+    color: black;
+    }
+    button {
+    color: blue;
+    }
 </style>
 <body>
         <div class="formulaire_event" >
             <form method="post" action="{% url 'Ajout_event' %}">
                 {% csrf_token %}
                 <input type="text" name="Titre" id="Titre" placeholder="Titre">
-                <input type="text" name="organisateur_nom" id="organisateur_nom" placeholder="organisateur">
+                <input type="text" name="organisateur_nom" id="organisateur_nom" placeholder="Organisateur">
 
             <button type="submit">Ajouter un événement</button>
             </form>
