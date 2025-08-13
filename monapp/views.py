@@ -25,7 +25,7 @@ def Ajout_event(request):
             return redirect('accueil')
     return render(request, 'index.html')
 
-def demander_participation(request):
+def supprimer_event(request):
     if request.method == 'POST':
         Titre = request.POST.get('Titre')
         organisateur = request.POST.get('organisateur_nom')
