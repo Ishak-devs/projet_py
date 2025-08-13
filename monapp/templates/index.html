@@ -51,9 +51,9 @@
 <div class="event_conteneur">
     <ul>
 {% for event in evenements%}
-<li>  {{ event.Titre }}</li>
-   <li>{{ event.organisateur_nom }}</li>
-    {% endfor %}
+ <li>
+            <strong>{{ event.Titre }}</strong> — <em>{{ event.organisateur_nom }}</em>
+        </li>
             </ul>
 </div>
 </body>
