@@ -33,6 +33,7 @@
             color: black;
             font-size: 14px;
         }
+
 </style>
 <body>
  <h2></h2>
@@ -49,12 +50,12 @@
 
 
 <div class="event_conteneur">
-
+    <h2>Liste des events</h2>
 {% for event in evenements%}
-    <h2>Liste des events/h2>
+
         <ul>
  <li>
-            <strong>{{ event.Titre }}</strong> — <em>{{ event.organisateur_nom }}</em>
+    <a href="{{ event.id }}/">{{ event.Titre }} — <em>{{ event.organisateur_nom }}</em></a>
         </li>
             </ul>
     {% endfor %}
