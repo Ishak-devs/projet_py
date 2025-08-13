@@ -6,19 +6,16 @@
 </head>
 <body>
         <div>
-            <form method="post" action="{% url 'ajout_event' %}">
+            <form method="post" action="{% url 'Ajout_event' %}">
                 {% csrf_token %}
                 <label for="Titre"></label>
                 <input type="text" name="Titre" id="Titre">
                 <label for="organisateur_nom"></label>
-                <input type="text" name="origanisateur_nom" id="organisateur_nom">
+                <input type="text" name="organisateur_nom" id="organisateur_nom">
 
             <button type="submit">Ajouter un événement</button>
             </form>
         </div>
 
- <div>
-            <button>Ajouter une information</button>
-        </div>
 </body>
 </html>

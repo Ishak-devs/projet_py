@@ -13,11 +13,10 @@ def accueil(request):
 def Ajout_event(request):
     if request.method == 'POST':
             Titre = request.POST.get('Titre')
-            oroganisateur_nom = request.POST.get('organisateur_nom')
+            organisateur_nom = request.POST.get('organisateur_nom')
 
-            if Titre and oroganisateur_nom:
-
-                Evenements.objects.create(Titre=Titre, oroganisateur_nom=oroganisateur_nom)
+            if Titre and organisateur_nom:
+                Evenements.objects.create(Titre=Titre, organisateur_nom=organisateur_nom)
                 console.print('données ajoutés')
 
             return render(request, 'index.html')
