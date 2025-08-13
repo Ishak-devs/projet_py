@@ -1,8 +1,6 @@
 from django.contrib.messages.api import success
 from django.http import HttpResponse
 from django.shortcuts import render
-from rich.ansi import console
-
 from .models import Evenements
 
 # Create your views here.
@@ -15,7 +13,8 @@ def Ajout_event(request):
             oroganisateur_nom = request.POST.get('organisateur_nom')
 
             if Titre and oroganisateur_nom:
-                Evenements.objects.create(Titre=Titre, oroganisateur_nom= oroganisateur_nom)
+                Evenements.objects.create(Titre=Titre, oroganisateur_nom=oroganisateur_nom)
                 print('données ajoutés')
 
             return render(request, 'index.html')
+    return None

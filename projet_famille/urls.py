@@ -22,4 +22,5 @@ from monapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.accueil, name='accueil'),
+    path('ajout/', views.Ajout_event, name='ajout_event')
 ]
