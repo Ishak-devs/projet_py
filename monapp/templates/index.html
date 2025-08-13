@@ -29,6 +29,10 @@
     h2 {
     font-size: 20px;
     }
+     .event_conteneur {
+            color: black;
+            font-size: 14px;
+        }
 </style>
 <body>
  <h2></h2>
@@ -44,10 +48,13 @@
         </div>
 
 
-<div>
-    {% for event in evenements%}
-    {{ event.Titre }}
+<div class="event_conteneur">
+    <ul>
+{% for event in evenements%}
+<li>  {{ event.Titre }}</li>
+   <li>{{ event.organisateur_nom }}</li>
     {% endfor %}
+            </ul>
 </div>
 </body>
 </html>
