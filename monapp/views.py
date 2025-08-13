@@ -8,7 +8,9 @@ console = Console()
 
 # Create your views here.
 def accueil(request):
-    return render(request, "index.html")
+    evenements = Evenements.objects.all()
+    return render(request, 'index.html', {'evenements': evenements})
+
 
 def Ajout_event(request):
     if request.method == 'POST':
@@ -22,6 +24,3 @@ def Ajout_event(request):
             return render(request, 'index.html')
     return None
 
-def afficher_event (request):
-   evenements = Evenements.objects.all()
-   return render(request, 'index.html', {'evenements': evenements})

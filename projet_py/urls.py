@@ -22,5 +22,5 @@ from monapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.accueil, name='accueil'),
-    path('Ajout_event/', views.Ajout_event, name='Ajout_event')
+    path('Ajout_event/', views.Ajout_event, name='Ajout_event'),
 ]
