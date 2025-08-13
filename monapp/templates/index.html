@@ -49,8 +49,10 @@
 
 
 <div class="event_conteneur">
-    <ul>
+
 {% for event in evenements%}
+    <h2>Liste des events/h2>
+        <ul>
  <li>
             <strong>{{ event.Titre }}</strong> — <em>{{ event.organisateur_nom }}</em>
         </li>
