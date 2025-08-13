@@ -16,6 +16,7 @@ def Ajout_event(request):
             oroganisateur_nom = request.POST.get('organisateur_nom')
 
             if Titre and oroganisateur_nom:
+
                 Evenements.objects.create(Titre=Titre, oroganisateur_nom=oroganisateur_nom)
                 console.print('données ajoutés')
 
