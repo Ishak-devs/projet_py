@@ -1,6 +1,6 @@
 from django.contrib.messages.api import success
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Evenements
 from rich.console import Console
 
@@ -8,6 +8,7 @@ console = Console()
 
 # Create your views here.
 def accueil(request):
+
     evenements = Evenements.objects.all()
     return render(request, 'index.html', {'evenements': evenements})
 
@@ -21,6 +22,5 @@ def Ajout_event(request):
                 Evenements.objects.create(Titre=Titre, organisateur_nom=organisateur_nom)
                 console.print('données ajoutés')
 
-            return render(request, 'index.html')
-    return None
-
+            return redirect('accueil')
+    return render(request, 'index.html')
