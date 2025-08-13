@@ -31,7 +31,7 @@
     }
 </style>
 <body>
- <h2>Pogrammation d'événements</h2>
+ <h2></h2>
         <div class="formulaire_event" >
 
             <form method="post" action="{% url 'Ajout_event' %}">
@@ -43,5 +43,11 @@
             </form>
         </div>
 
+
+<div>
+    {% for event in evenements%}
+    {{ event.Titre }}
+    {% endfor %}
+</div>
 </body>
 </html>

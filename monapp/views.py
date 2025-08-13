@@ -23,5 +23,5 @@ def Ajout_event(request):
     return None
 
 def afficher_event (request):
-   events = Evenements.objects.all
-   return render(request, 'index.html', {'evenements': events})
+   evenements = Evenements.objects.all()
+   return render(request, 'index.html', {'evenements': evenements})
