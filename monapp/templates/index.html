@@ -39,12 +39,15 @@
  <h2></h2>
         <div class="formulaire_event" >
 
+
             <form method="post" action="{% url 'Ajout_event' %}">
                 {% csrf_token %}
                 <input type="text" name="Titre" id="Titre" placeholder="Titre">
                 <input type="text" name="organisateur_nom" id="organisateur_nom" placeholder="Organisateur">
 
             <button type="submit">Ajouter un événement</button>
+                      <form action="{% url 'supprimer_evenement' %}"></form>
+                <button type="submit">Supprimer l'event</button>
             </form>
         </div>
 
