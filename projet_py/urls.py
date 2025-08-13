@@ -1,5 +1,5 @@
 """
-URL configuration for projet_famille project.
+URL configuration for projet_py project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -22,5 +22,5 @@ from monapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.accueil, name='accueil'),
-    path('ajout/', views.Ajout_event, name='Ajout_event')
+    path('Ajout_event/', views.Ajout_event, name='Ajout_event')
 ]

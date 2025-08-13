@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
+<style>
+    .formulaire_event {
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+    }
+</style>
 <body>
         <div>
-            <form method="post" action="{% url 'Ajout_event' %}">
+            <form class="formulaire_event" method="post" action="{% url 'Ajout_event' %}">
                 {% csrf_token %}
                 <label for="Titre"></label>
                 <input type="text" name="Titre" id="Titre">

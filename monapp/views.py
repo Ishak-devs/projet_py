@@ -19,5 +19,6 @@ def Ajout_event(request):
                 Evenements.objects.create(Titre=Titre, organisateur_nom=organisateur_nom)
                 console.print('données ajoutés')
 
+
             return render(request, 'index.html')
     return None
