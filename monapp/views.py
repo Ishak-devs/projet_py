@@ -30,6 +30,9 @@ def supprimer_event(request):
         Titre = request.POST.get('Titre')
         organisateur = request.POST.get('organisateur_nom')
 
-        Evenements.objects.filter(Titre=Titre, organisateur_nom=organisateur)
+        Evenements.objects.filter(Titre=Titre, organisateur_nom=organisateur).delete()
 
         return redirect('accueil')
+
+def delete_event(request):
+    return redirect('aceuil')

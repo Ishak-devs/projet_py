@@ -46,6 +46,7 @@
                 <input type="text" name="organisateur_nom" id="organisateur_nom" placeholder="Organisateur">
 
             <button type="submit">Ajouter un événement</button>
+
   </form>
 
         </div>
@@ -54,9 +55,13 @@
     <h2>Liste des events</h2>
 {% for event in evenements%}
 
+
         <ul>
  <li>
-    <a href="{{ event.id }}/">{{ event.Titre }} — <em>{{ event.organisateur_nom }}</em></a>
+    <form method="post" action="{% url 'delete_event' event.id %}">
+    {% csrf_token %}
+    <button type="submit">Supprimer</button>
+</form>
         </li>
             </ul>
     {% endfor %}
