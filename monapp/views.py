@@ -25,14 +25,11 @@ def Ajout_event(request):
             return redirect('accueil')
     return render(request, 'index.html')
 
-def supprimer_event(request):
+
+def delete_event(request):
     if request.method == 'POST':
         Titre = request.POST.get('Titre')
         organisateur = request.POST.get('organisateur_nom')
 
         Evenements.objects.filter(Titre=Titre, organisateur_nom=organisateur).delete()
-
         return redirect('accueil')
-
-def delete_event(request):
-    return redirect('aceuil')

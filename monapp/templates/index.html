@@ -58,10 +58,12 @@
 
         <ul>
  <li>
+     {% if Evenements %}
     <form method="post" action="{% url 'delete_event' %}">
     {% csrf_token %}
-    <button type="submit">Supprimer</button>
+    <button type="submit">Supprimer l'événement</button>
 </form>
+     {% endif %}
         </li>
             </ul>
     {% endfor %}
