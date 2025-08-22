@@ -58,7 +58,7 @@
 
         <ul>
  <li>
-    <form method="post" action="{% url 'delete_event' event.id %}">
+    <form method="post" action="{% url 'delete_event' %}">
     {% csrf_token %}
     <button type="submit">Supprimer</button>
 </form>

@@ -23,5 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.accueil, name='accueil'),
     path('Ajout_event/', views.Ajout_event, name='Ajout_event'),
-    path('supprimer_event/', views.supprimer_event, name='supprimer_event')
+    path('delete_event/', views.delete_event, name='delete_event')
 ]
