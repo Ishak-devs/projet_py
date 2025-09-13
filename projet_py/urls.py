@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.accueil, name='accueil'),
     path('Ajout_event/', views.Ajout_event, name='Ajout_event'),
-    path('delete_event/', views.delete_event, name='delete_event')
+    path('delete_event/', views.delete_event, name='delete_event'),
+    path('gerer_event/', views.gerer_event, name='gerer_event')
 ]

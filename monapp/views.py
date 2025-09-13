@@ -12,6 +12,9 @@ def accueil(request):
     evenements = Evenements.objects.all()
     return render(request, 'index.html', {'evenements': evenements})
 
+def gerer_event(request):
+    return render(request, 'gerer_event.html')
+
 
 def Ajout_event(request):
     if request.method == 'POST':
