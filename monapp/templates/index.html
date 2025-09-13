@@ -42,8 +42,10 @@
 
             <form method="post" action="{% url 'Ajout_event' %}">
                 {% csrf_token %}
-                <input type="text" name="Titre" id="Titre" placeholder="Titre">
-                <input type="text" name="organisateur_nom" id="organisateur_nom" placeholder="Organisateur">
+                <input type="text" name="Titre" id="Titre" placeholder="Titre" required>
+                <input type="text" name="organisateur_nom" id="organisateur_nom" placeholder="Organisateur" required>
+                <input type="text" name="lieu" id="lieu" placeholder="Lieu" value="En ligne">
+                <input type="date" name="date" id="date" required>
 
             <button type="submit">Ajouter un événement</button>
 
@@ -53,17 +55,24 @@
 
 <div class="event_conteneur">
     <h2>Liste des events</h2>
-{% for event in evenements%}
-
-
-
-    {% if Evenements %}
-    <form method="post" action="{% url 'delete_event' %}">
-    {% csrf_token %}
-    <button type="submit">Supprimer l'événement</button>
-</form>
-     {% endif %}
-    {% endfor %}
+    {% if evenements %}
+        {% for event in evenements %}
+            <div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0; border-radius: 5px;">
+                <h3>{{ event.Titre }}</h3>
+                <p><strong>Organisateur:</strong> {{ event.organisateur_nom }}</p>
+                <p><strong>Lieu:</strong> {{ event.lieu }}</p>
+                <p><strong>Date:</strong> {{ event.date }}</p>
+                <form method="post" action="{% url 'delete_event' %}" style="display: inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="Titre" value="{{ event.Titre }}">
+                    <input type="hidden" name="organisateur_nom" value="{{ event.organisateur_nom }}">
+                    <button type="submit" style="background-color: #ff4444; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Supprimer</button>
+                </form>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Aucun événement trouvé.</p>
+    {% endif %}
 </div>
 </body>
 </html>

@@ -17,9 +17,16 @@ def Ajout_event(request):
     if request.method == 'POST':
             Titre = request.POST.get('Titre')
             organisateur_nom = request.POST.get('organisateur_nom')
+            lieu = request.POST.get('lieu', 'En ligne')
+            date = request.POST.get('date')
 
             if Titre and organisateur_nom:
-                Evenements.objects.create(Titre=Titre, organisateur_nom=organisateur_nom)
+                Evenements.objects.create(
+                    Titre=Titre, 
+                    organisateur_nom=organisateur_nom,
+                    lieu=lieu,
+                    date=date
+                )
                 console.print('données ajoutés')
 
             return redirect('accueil')
